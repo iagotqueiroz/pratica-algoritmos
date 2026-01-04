@@ -1,0 +1,714 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Descrição Narrativa</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2debb6d4-c262-807d-bce4-cf9dee1eff53" class="page sans"><header><h1 class="page-title" dir="auto">Descrição Narrativa</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><ul id="2debb6d4-c262-80ef-b5a1-c0100229926c" class="toggle"><li><details open=""><summary>Fazer um café coado</summary><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80e8-93bc-ea5195fc2ad0" class="numbered-list" start="1"><li>pegue uma panela cilíndrica e coloque em cima do fogão</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-809b-9730-c9cb72f9641c" class="numbered-list" start="2"><li>adicione 500 ml de água</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80e3-a561-ecfb5bde97e7" class="numbered-list" start="3"><li>Ligue a boca do fogão e espere até a água ferver.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8090-8c41-fb0525d0f483" class="numbered-list" start="4"><li>Pegue um recipiente e coloque em cima da pia limpa</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8087-9902-e5f72fda21c2" class="numbered-list" start="5"><li>coloque o cuador em cima desse recipiente</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8098-937c-e054abf6d513" class="numbered-list" start="6"><li>pegue o pó de café</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-808f-bed4-d61092691737" class="numbered-list" start="7"><li>abra com uma tesoura sem ponta</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80fb-bbf5-e67ca9485b4e" class="numbered-list" start="8"><li>Adicione três colheres de sopa de café no cuador.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-809c-9b95-f61902c2a411" class="numbered-list" start="9"><li>pegue a panela com água no fogão e vai despejando aos poucos no cuador até finalizar a água da panela</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-803b-8168-f3672dc6ac72" class="numbered-list" start="10"><li>Pegue o café cuado e coloque na garrafa</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-804a-9c82-e3a31140aca2" class="numbered-list" start="11"><li>coloque o café na xícara e beba</li></ol></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="2debb6d4-c262-8024-815f-ec30793a3da9" class="toggle"><li><details open=""><summary>Configurar o despertador no celular</summary><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80cc-88a7-c07dce5e915e" class="numbered-list" start="1"><li>Pegue o celular</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-802e-a18c-ce32980dfbbd" class="numbered-list" start="2"><li>ligue</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80dc-a4f9-f46ab02c9db7" class="numbered-list" start="3"><li>coloque a senha</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80fc-a9ff-c7c9b23c30b2" class="numbered-list" start="4"><li>navegue até o aplicativo chamado ‘relógio’</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80a9-91e9-c116fc39410b" class="numbered-list" start="5"><li>procure pela seção ‘alarme’</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-807e-a180-e15809f90c28" class="numbered-list" start="6"><li>escolha a data e horário para despertar</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8018-b427-e18d8dc8bda4" class="numbered-list" start="7"><li>clique em confirmar</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-808d-8fd7-f5c508345409" class="numbered-list" start="8"><li>saia do aplicativo</li></ol></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="2debb6d4-c262-8014-b8f9-c3d12e6157bd" class="toggle"><li><details open=""><summary>Ligar um computador</summary><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8004-81be-f1f748c70e03" class="numbered-list" start="1"><li>Vá até o escritório</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-800c-96e8-fd911d93340e" class="numbered-list" start="2"><li>sente na cadeira da mesa do computador</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8058-88b9-ef0958d727a1" class="numbered-list" start="3"><li>aperte o botão ‘ligar’ do compútador e espere</li></ol></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="2debb6d4-c262-80bb-aa30-df710536eb0d" class="toggle"><li><details open=""><summary>Carregar o celular</summary><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80c2-a84a-f34a099a637c" class="numbered-list" start="1"><li>Procure o carregador e pegue-o</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8038-8d60-cf95ad2f9188" class="numbered-list" start="2"><li>vá até uma tomada e conecte o carregador</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80b6-94c9-ce0f72ca0d42" class="numbered-list" start="3"><li>Conecte a outra parte do carregador no celular</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-803f-a8a2-eb69e610fdfe" class="numbered-list" start="4"><li>e espere por uma hora</li></ol></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="2debb6d4-c262-80c3-9771-d8a0daac90d1" class="toggle"><li><details open=""><summary>Assistir a um filme em casa</summary><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-807e-8c1c-e609071ec1ab" class="numbered-list" start="1"><li>Vá até a cozinha</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8047-9102-fea50c97ec5e" class="numbered-list" start="2"><li>Pegue a máquina de  fazer pipoca</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80ba-a9c8-cbf2b2f5afd1" class="numbered-list" start="3"><li>pegue o milho</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8085-8cc5-cd4b4a4e1354" class="numbered-list" start="4"><li>coloque na máquina</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80a7-af4b-e99e79627f0f" class="numbered-list" start="5"><li>ligue a máquina e espere até o milho parar de estourar</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8056-b08d-d5f5076f03ee" class="numbered-list" start="6"><li>coloque a pipoca em um recipiente</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8052-8df2-d63a23aeb51e" class="numbered-list" start="7"><li>adicione sal a gosto</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-800f-900a-f41436e8bca7" class="numbered-list" start="8"><li>leve o recipiente para sala</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8019-a152-f65ba5215d17" class="numbered-list" start="9"><li>ligue a tv</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-800c-b61c-d7ed1df50a43" class="numbered-list" start="10"><li>procure pelo aplicativo netflix</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-801d-a20a-f617bcb06394" class="numbered-list" start="11"><li>procure por um filme que você queira</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80c0-afc5-ff238d8b2b91" class="numbered-list" start="12"><li>clique em assistir </li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-802d-a7ef-d17f2aedc147" class="numbered-list" start="13"><li>e aproveite o fillme</li></ol></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="2debb6d4-c262-8031-a976-c3b4be338b33" class="toggle"><li><details open=""><summary>Regar uma planta</summary><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8068-ab80-cbddcc5e3ba3" class="numbered-list" start="1"><li>pegar o regador</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80cf-aa2a-f9913a867f9a" class="numbered-list" start="2"><li>adicionar água</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8014-9f9b-f33ec01b15cd" class="numbered-list" start="3"><li>vá até o jardim</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8037-b986-f2fa1003fe98" class="numbered-list" start="4"><li>regue a planta</li></ol></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="2debb6d4-c262-8013-afd8-f32854e3ccc8" class="toggle"><li><details open=""><summary>Fazer uma pipoca</summary><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8053-8be2-dd22c7347ccb" class="numbered-list" start="1"><li>Vá até a cozinha</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80db-a1c2-d8c4cc4ec6ba" class="numbered-list" start="2"><li>Pegue a máquina de  fazer pipoca</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80ab-8d65-d86b22b335e0" class="numbered-list" start="3"><li>pegue o milho</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80e9-9a24-ef4fc0f00f8d" class="numbered-list" start="4"><li>coloque na máquina</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-804d-a83b-fbea3eae3096" class="numbered-list" start="5"><li>ligue a máquina e espere até o milho parar de estourar</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-803b-909a-e986e6858af9" class="numbered-list" start="6"><li>coloque a pipoca em um recipiente</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80b7-8e79-e250712c0c76" class="numbered-list" start="7"><li>adicione sal a gosto</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80c0-ab9c-c809034b0360" class="numbered-list" start="8"><li>leve o recipiente para sala</li></ol></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="2debb6d4-c262-8048-be1d-db36eb84543a" class="toggle"><li><details open=""><summary>Participar de uma reunião online</summary><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8000-a4be-e8df393a6754" class="numbered-list" start="1"><li>Vá até o escritório</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8039-a50e-f6a46eeddcc7" class="numbered-list" start="2"><li>ligue o computador</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80b2-93c3-e642b50dd47b" class="numbered-list" start="3"><li>abra o navegador</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80ad-9bdc-caa32702a08d" class="numbered-list" start="4"><li>pesquise pelo google meet</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80f3-b578-cb5cc9bab7a5" class="numbered-list" start="5"><li>crie uma sala de reunião</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80d9-b181-de3fbc6535fd" class="numbered-list" start="6"><li>copie o link</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8073-b693-f3ead4625786" class="numbered-list" start="7"><li>vá até o whatsApp</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8049-9f00-de123bf4787f" class="numbered-list" start="8"><li>envie para o cliente</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80fc-9788-e0bbc7663789" class="numbered-list" start="9"><li>volte para o google meet</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-808d-a298-d9b25c297d26" class="numbered-list" start="10"><li>e espere</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8030-89ba-d0106cd100ad" class="numbered-list" start="11"><li>faça a reunião</li></ol></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="2debb6d4-c262-8018-9ecb-e6af5080042b" class="toggle"><li><details open=""><summary>Criar uma lista com as tarefas da semana</summary><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-809c-96e5-e3b04bbcc11a" class="numbered-list" start="1"><li>pegue o celular</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8037-b1c0-deb8f68468b1" class="numbered-list" start="2"><li>vá até a loja de aplicativos do seu celular</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8076-ac54-d94425a6399c" class="numbered-list" start="3"><li>pesquise por ‘aplicativos de lista de tarefas</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80e3-8d2c-c91b9ae183a7" class="numbered-list" start="4"><li>baixe um dos primeiros</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80e5-8a2e-df2164a50243" class="numbered-list" start="5"><li>espere baixar</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-805e-aa7e-d75a53c49b55" class="numbered-list" start="6"><li>clique em abrir</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8051-9a3c-ddf0dd20f89f" class="numbered-list" start="7"><li>crie sua conta</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80ca-8379-cea980cbde27" class="numbered-list" start="8"><li>comece a listar suas tarefas</li></ol></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="2debb6d4-c262-804b-9be0-c5a1ef6a2bb9" class="toggle"><li><details open=""><summary>Assistir a um vídeo do Diego no canal da Rocketseat 💜</summary><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-807b-a989-eab54534f69e" class="numbered-list" start="1"><li>Ligue o computador</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8093-9a0c-ff1b1663b2ff" class="numbered-list" start="2"><li>vá até o navegador</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80e2-ad78-c44ae66940d8" class="numbered-list" start="3"><li>pesquise por rockteseat.com.br</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-80f8-a012-ef6b54b69f7b" class="numbered-list" start="4"><li>clique no curso que você quer</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2debb6d4-c262-8074-827f-fb5e9a6de8c4" class="numbered-list" start="5"><li>clique em assistir aula.</li></ol></div></details></li></ul></div><div style="display:contents" dir="auto"><p id="2debb6d4-c262-80d5-a01b-e9dc5a7b9749" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
